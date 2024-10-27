@@ -1,21 +1,41 @@
 buildscript {
-    ext {
-        buildToolsVersion = "34.0.0"
-        minSdkVersion = 23
-        compileSdkVersion = 34
-        targetSdkVersion = 34
-        ndkVersion = "26.1.10909125"
-        kotlinVersion = "1.9.24"
-    }
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        // Use the latest stable version of the Android Gradle Plugin
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        // Ensure compatibility with your version of React Native
+        classpath 'com.facebook.react:react-native-gradle-plugin:0.71.0-rc.0'
+        // Use the latest stable version of Kotlin
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24'
     }
 }
 
-apply plugin: "com.facebook.react.rootproject"
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // maven { url 'https://www.jitpack.io' }
+        // maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        // // Add Maven repository for tsbackgroundfetch
+        // maven { url "$rootDir/../node_modules/react-native-background-fetch/android/libs" }
+    }
+}
+
+ext {
+    // Keep these values updated to match the latest stable versions
+    buildToolsVersion = "34.0.0"
+    minSdkVersion = 23
+    compileSdkVersion = 34
+    targetSdkVersion = 34
+    ndkVersion = "28.0.12433566"
+    kotlinVersion = "1.9.24"
+    playServicesLocationVersion = "21.0.1"
+}
+
+// Apply the React Native root project plugin
+apply plugin: 'com.facebook.react.rootproject'

@@ -10,8 +10,24 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.0.0",
+    "@react-native-community/geolocation": "^3.4.0",
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
+    "axios": "^1.7.7",
     "react": "18.3.1",
-    "react-native": "0.75.4"
+    "react-native": "0.75.4",
+    "react-native-background-actions": "^4.0.1",
+    "react-native-geolocation-service": "^5.3.1",
+    "react-native-maps": "^1.18.0",
+    "react-native-safe-area-context": "^4.11.0",
+    "react-native-screens": "^3.34.0",
+    "react-native-sensors": "^7.3.6",
+    "react-native-sound": "^0.11.2",
+    "react-native-vector-icons": "^10.2.0",
+    "react-native-webview": "^13.12.3",
+    "twilio": "^5.3.4",
+    "twrnc": "^4.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
